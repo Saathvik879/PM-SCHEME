@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM Internship Scheme - Find Your Perfect Internship</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button id="langToggle" class="btn btn--outline btn--sm">
+            <span class="lang-en">हिंदी</span>
+            <span class="lang-hi hidden">English</span>
+        </button>
+    </div>
+
+    <!-- Welcome Screen -->
+    <div id="welcomeScreen" class="screen active">
+        <div class="container">
+            <div class="welcome-content">
+                <div class="logo">
+                    <img src="https://user-gen-media-assets.s3.amazonaws.com/gemini_images/41c30126-e0a7-44cb-8177-4156865e6a64.png" alt="PM Internship Scheme Logo" class="logo-img">
+                </div>
+                <h1 class="welcome-title">
+                    <span class="lang-en">PM Internship Scheme</span>
+                    <span class="lang-hi hidden">प्रधानमंत्री इंटर्नशिप योजना</span>
+                </h1>
+                <p class="welcome-subtitle">
+                    <span class="lang-en">Get your dream internship with top companies across India</span>
+                    <span class="lang-hi hidden">भारत की शीर्ष कंपनियों में अपनी स्वप्न इंटर्नशिप पाएं</span>
+                </p>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">💼</div>
+                        <p class="benefit-text">
+                            <span class="lang-en">Real Work Experience</span>
+                            <span class="lang-hi hidden">वास्तविक कार्य अनुभव</span>
+                        </p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">₹</div>
+                        <p class="benefit-text">
+                            <span class="lang-en">Monthly Stipend</span>
+                            <span class="lang-hi hidden">मासिक वेतन</span>
+                        </p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🎓</div>
+                        <p class="benefit-text">
+                            <span class="lang-en">Skill Development</span>
+                            <span class="lang-hi hidden">कौशल विकास</span>
+                        </p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🚀</div>
+                        <p class="benefit-text">
+                            <span class="lang-en">Career Growth</span>
+                            <span class="lang-hi hidden">करियर की वृद्धि</span>
+                        </p>
+                    </div>
+                </div>
+                
+                <button id="startBtn" class="btn btn--primary btn--lg btn--full-width">
+                    <span class="lang-en">🔍 Find My Internships</span>
+                    <span class="lang-hi hidden">🔍 मेरी इंटर्नशिप खोजें</span>
+                </button>
+                
+                <p class="voice-note">
+                    <span class="lang-en">🎤 Voice input supported - Speak your answers!</span>
+                    <span class="lang-hi hidden">🎤 आवाज इनपुट समर्थित - अपने उत्तर बोलें!</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Creation Steps -->
+    <div id="profileScreen" class="screen">
+        <div class="container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar"></div>
+                <div class="progress-steps">
+                    <span class="step active" data-step="1">1</span>
+                    <span class="step" data-step="2">2</span>
+                    <span class="step" data-step="3">3</span>
+                    <span class="step" data-step="4">4</span>
+                </div>
+            </div>
+
+            <!-- Step 1: Personal Details -->
+            <div id="step1" class="form-step active">
+                <h2 class="step-title">
+                    <span class="lang-en">📋 Personal Details</span>
+                    <span class="lang-hi hidden">📋 व्यक्तिगत विवरण</span>
+                </h2>
+                <form class="profile-form">
+                    <div class="form-group">
+                        <label class="form-label">
+                            <span class="lang-en">Full Name</span>
+                            <span class="lang-hi hidden">पूरा नाम</span>
+                        </label>
+                        <input type="text" id="fullName" class="form-control" placeholder="Enter your full name / अपना पूरा नाम दर्ज करें" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">
+                            <span class="lang-en">Age</span>
+                            <span class="lang-hi hidden">आयु</span>
+                        </label>
+                        <select id="age" class="form-control" required>
+                            <option value="">Select Age / आयु चुनें</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">
+                            <span class="lang-en">State</span>
+                            <span class="lang-hi hidden">राज्य</span>
+                        </label>
+                        <select id="state" class="form-control" required>
+                            <option value="">Select State / राज्य चुनें</option>
+                            <option value="Maharashtra">Maharashtra / महाराष्ट्र</option>
+                            <option value="Delhi">Delhi / दिल्ली</option>
+                            <option value="Karnataka">Karnataka / कर्नाटक</option>
+                            <option value="Tamil Nadu">Tamil Nadu / तमिल नाडु</option>
+                            <option value="Haryana">Haryana / हरियाणा</option>
+                            <option value="Telangana">Telangana / तेलंगाना</option>
+                            <option value="West Bengal">West Bengal / पश्चिम बंगाल</option>
+                            <option value="Gujarat">Gujarat / गुजरात</option>
+                            <option value="Rajasthan">Rajasthan / राजस्थान</option>
+                        </select>
+                    </div>
+                </form>
+                <button id="step1Next" class="btn btn--primary btn--lg btn--full-width">
+                    <span class="lang-en">Continue →</span>
+                    <span class="lang-hi hidden">जारी रखें →</span>
+                </button>
+            </div>
+
+            <!-- Step 2: Education -->
+            <div id="step2" class="form-step">
+                <h2 class="step-title">
+                    <span class="lang-en">🎓 Education Background</span>
+                    <span class="lang-hi hidden">🎓 शिक्षा पृष्ठभूमि</span>
+                </h2>
+                <div class="education-options">
+                    <div class="option-card" data-value="10th Pass">
+                        <div class="option-icon">📚</div>
+                        <h3>
+                            <span class="lang-en">10th Pass</span>
+                            <span class="lang-hi hidden">10वीं पास</span>
+                        </h3>
+                        <p>
+                            <span class="lang-en">Completed 10th standard</span>
+                            <span class="lang-hi hidden">10वीं कक्षा पूर्ण</span>
+                        </p>
+                    </div>
+                    <div class="option-card" data-value="12th Pass">
+                        <div class="option-icon">📖</div>
+                        <h3>
+                            <span class="lang-en">12th Pass</span>
+                            <span class="lang-hi hidden">12वीं पास</span>
+                        </h3>
+                        <p>
+                            <span class="lang-en">Completed 12th standard</span>
+                            <span class="lang-hi hidden">12वीं कक्षा पूर्ण</span>
+                        </p>
+                    </div>
+                    <div class="option-card" data-value="ITI">
+                        <div class="option-icon">🔧</div>
+                        <h3>
+                            <span class="lang-en">ITI</span>
+                            <span class="lang-hi hidden">आईटीआई</span>
+                        </h3>
+                        <p>
+                            <span class="lang-en">Industrial Training Institute</span>
+                            <span class="lang-hi hidden">औद्योगिक प्रशिक्षण संस्थान</span>
+                        </p>
+                    </div>
+                    <div class="option-card" data-value="Diploma">
+                        <div class="option-icon">📜</div>
+                        <h3>
+                            <span class="lang-en">Diploma</span>
+                            <span class="lang-hi hidden">डिप्लोमा</span>
+                        </h3>
+                        <p>
+                            <span class="lang-en">Polytechnic or technical diploma</span>
+                            <span class="lang-hi hidden">पॉलिटेक्निक या तकनीकी डिप्लोमा</span>
+                        </p>
+                    </div>
+                    <div class="option-card" data-value="Graduate">
+                        <div class="option-icon">🎓</div>
+                        <h3>
+                            <span class="lang-en">Graduate</span>
+                            <span class="lang-hi hidden">स्नातक</span>
+                        </h3>
+                        <p>
+                            <span class="lang-en">Bachelor's degree completed</span>
+                            <span class="lang-hi hidden">स्नातक की डिग्री पूर्ण</span>
+                        </p>
+                    </div>
+                </div>
+                <button id="step2Back" class="btn btn--outline btn--lg btn--full-width">
+                    <span class="lang-en">← Back</span>
+                    <span class="lang-hi hidden">← वापस</span>
+                </button>
+                <button id="step2Next" class="btn btn--primary btn--lg btn--full-width" disabled>
+                    <span class="lang-en">Continue →</span>
+                    <span class="lang-hi hidden">जारी रखें →</span>
+                </button>
+            </div>
+
+            <!-- Step 3: Skills -->
+            <div id="step3" class="form-step">
+                <h2 class="step-title">
+                    <span class="lang-en">💪 Your Skills</span>
+                    <span class="lang-hi hidden">💪 आपके कौशल</span>
+                </h2>
+                <p class="step-subtitle">
+                    <span class="lang-en">Select all skills you have or want to learn</span>
+                    <span class="lang-hi hidden">उन सभी कौशलों का चयन करें जो आपके पास हैं या सीखना चाहते हैं</span>
+                </p>
+                <div class="skills-grid">
+                    <div class="skill-tag" data-skill="Communication Skills">
+                        <span class="lang-en">💬 Communication</span>
+                        <span class="lang-hi hidden">💬 संचार</span>
+                    </div>
+                    <div class="skill-tag" data-skill="Computer Basics">
+                        <span class="lang-en">💻 Computer Basics</span>
+                        <span class="lang-hi hidden">💻 कंप्यूटर बेसिक</span>
+                    </div>
+                    <div class="skill-tag" data-skill="Customer Service">
+                        <span class="lang-en">🤝 Customer Service</span>
+                        <span class="lang-hi hidden">🤝 ग्राहक सेवा</span>
+                    </div>
+                    <div class="skill-tag" data-skill="Sales Skills">
+                        <span class="lang-en">📈 Sales</span>
+                        <span class="lang-hi hidden">📈 बिक्री</span>
+                    </div>
+                    <div class="skill-tag" data-skill="Technical Skills">
+                        <span class="lang-en">⚙️ Technical</span>
+                        <span class="lang-hi hidden">⚙️ तकनीकी</span>
+                    </div>
+                    <div class="skill-tag" data-skill="Basic Accounting">
+                        <span class="lang-en">🧮 Accounting</span>
+                        <span class="lang-hi hidden">🧮 लेखांकन</span>
+                    </div>
+                    <div class="skill-tag" data-skill="Machine Operation">
+                        <span class="lang-en">🔧 Machine Operation</span>
+                        <span class="lang-hi hidden">🔧 मशीन संचालन</span>
+                    </div>
+                    <div class="skill-tag" data-skill="Quality Control">
+                        <span class="lang-en">✅ Quality Control</span>
+                        <span class="lang-hi hidden">✅ गुणवत्ता नियंत्रण</span>
+                    </div>
+                    <div class="skill-tag" data-skill="Leadership">
+                        <span class="lang-en">👑 Leadership</span>
+                        <span class="lang-hi hidden">👑 नेतृत्व</span>
+                    </div>
+                    <div class="skill-tag" data-skill="Problem Solving">
+                        <span class="lang-en">🧩 Problem Solving</span>
+                        <span class="lang-hi hidden">🧩 समस्या समाधान</span>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="step3Back" class="btn btn--outline btn--lg">
+                        <span class="lang-en">← Back</span>
+                        <span class="lang-hi hidden">← वापस</span>
+                    </button>
+                    <button id="step3Next" class="btn btn--primary btn--lg">
+                        <span class="lang-en">Continue →</span>
+                        <span class="lang-hi hidden">जारी रखें →</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 4: Preferences -->
+            <div id="step4" class="form-step">
+                <h2 class="step-title">
+                    <span class="lang-en">⭐ Your Preferences</span>
+                    <span class="lang-hi hidden">⭐ आपकी प्राथमिकताएं</span>
+                </h2>
+                <div class="preferences-section">
+                    <h3>
+                        <span class="lang-en">Sectors of Interest</span>
+                        <span class="lang-hi hidden">रुचि के क्षेत्र</span>
+                    </h3>
+                    <div class="sectors-grid">
+                        <div class="sector-card" data-sector="IT Services">
+                            <div class="sector-icon">💻</div>
+                            <span class="lang-en">IT Services</span>
+                            <span class="lang-hi hidden">आईटी सेवाएं</span>
+                        </div>
+                        <div class="sector-card" data-sector="Banking & Financial Services">
+                            <div class="sector-icon">🏦</div>
+                            <span class="lang-en">Banking</span>
+                            <span class="lang-hi hidden">बैंकिंग</span>
+                        </div>
+                        <div class="sector-card" data-sector="Automobile">
+                            <div class="sector-icon">🚗</div>
+                            <span class="lang-en">Automobile</span>
+                            <span class="lang-hi hidden">ऑटोमोबाइल</span>
+                        </div>
+                        <div class="sector-card" data-sector="Retail">
+                            <div class="sector-icon">🛒</div>
+                            <span class="lang-en">Retail</span>
+                            <span class="lang-hi hidden">खुदरा</span>
+                        </div>
+                        <div class="sector-card" data-sector="Manufacturing">
+                            <div class="sector-icon">🏭</div>
+                            <span class="lang-en">Manufacturing</span>
+                            <span class="lang-hi hidden">विनिर्माण</span>
+                        </div>
+                        <div class="sector-card" data-sector="FMCG">
+                            <div class="sector-icon">📦</div>
+                            <span class="lang-en">FMCG</span>
+                            <span class="lang-hi hidden">एफएमसीजी</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="step4Back" class="btn btn--outline btn--lg">
+                        <span class="lang-en">← Back</span>
+                        <span class="lang-hi hidden">← वापस</span>
+                    </button>
+                    <button id="generateBtn" class="btn btn--primary btn--lg">
+                        <span class="lang-en">🎯 Get My Recommendations</span>
+                        <span class="lang-hi hidden">🎯 मेरी सिफारिशें प्राप्त करें</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="screen">
+        <div class="container">
+            <div class="loading-content">
+                <div class="loading-spinner"></div>
+                <h2 class="loading-title">
+                    <span class="lang-en">🤖 AI is finding perfect internships for you...</span>
+                    <span class="lang-hi hidden">🤖 AI आपके लिए सही इंटर्नशिप खोज रहा है...</span>
+                </h2>
+                <p class="loading-text">
+                    <span class="lang-en">Analyzing your profile and matching with top companies</span>
+                    <span class="lang-hi hidden">आपकी प्रोफाइल का विश्लेषण कर शीर्ष कंपनियों से मिलान कर रहा है</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recommendations Screen -->
+    <div id="recommendationsScreen" class="screen">
+        <div class="container">
+            <h2 class="recommendations-title">
+                <span class="lang-en">🎉 Your Perfect Internship Matches!</span>
+                <span class="lang-hi hidden">🎉 आपकी सही इंटर्नशिप मैच!</span>
+            </h2>
+            <p class="recommendations-subtitle">
+                <span class="lang-en">Based on your profile, we found these amazing opportunities</span>
+                <span class="lang-hi hidden">आपकी प्रोफाइल के आधार पर, हमें ये शानदार अवसर मिले</span>
+            </p>
+            
+            <div id="recommendationCards" class="recommendations-grid">
+                <!-- Recommendation cards will be inserted here -->
+            </div>
+            
+            <div class="recommendations-footer">
+                <button id="startOverBtn" class="btn btn--outline btn--lg">
+                    <span class="lang-en">← Start Over</span>
+                    <span class="lang-hi hidden">← फिर से शुरू करें</span>
+                </button>
+                <button id="trackBtn" class="btn btn--primary btn--lg">
+                    <span class="lang-en">📋 Track My Applications</span>
+                    <span class="lang-hi hidden">📋 मेरे आवेदन ट्रैक करें</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application Tracking Screen -->
+    <div id="trackingScreen" class="screen">
+        <div class="container">
+            <h2 class="tracking-title">
+                <span class="lang-en">📋 Application Status</span>
+                <span class="lang-hi hidden">📋 आवेदन की स्थिति</span>
+            </h2>
+            <div class="tracking-content">
+                <p class="tracking-empty">
+                    <span class="lang-en">🔍 No applications yet. Apply for internships to track your progress!</span>
+                    <span class="lang-hi hidden">🔍 अभी तक कोई आवेदन नहीं। अपनी प्रगति ट्रैक करने के लिए इंटर्नशिप के लिए आवेदन करें!</span>
+                </p>
+            </div>
+            <button id="backToRecsBtn" class="btn btn--primary btn--lg btn--full-width">
+                <span class="lang-en">← Back to Recommendations</span>
+                <span class="lang-hi hidden">← सिफारिशों पर वापस जाएं</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
